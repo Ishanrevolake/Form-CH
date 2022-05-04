@@ -258,7 +258,7 @@ export default function Home() {
                   type="text"
                   className="input"
 
-                  placeholder="Enter Email "
+                  placeholder="Enter Address "
                   onChange={(e) => setAddress(e.target.value)}
                 />
               </p>
@@ -280,7 +280,7 @@ export default function Home() {
                 <textarea
                   value={description}
                   type="textarea"
-                  maxLength="10"
+                 
 
                   name="textarea"
                   id="aboutTextarea"
@@ -333,7 +333,7 @@ export default function Home() {
                 <textarea
                   value={itemDescription}
                   type="textarea"
-                  maxLength="10"
+               
                   onChange={(e) => setItemdecrriptio(e.target.value)}
                   name="textarea"
                   id="aboutTextarea"
