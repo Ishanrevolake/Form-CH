@@ -454,7 +454,7 @@ export default function Home() {
                   type="text"
                   className="input"
                   id="namedash"
-                  placeholder="Enter the name"
+                  placeholder="Other Information"
                   onChange={(e) => setOtherinformation(e.target.value)}
                 />
               </p>
@@ -476,7 +476,7 @@ export default function Home() {
                   type="number"
                   className="input"
                   id="namedash"
-                  placeholder="Enter the name"
+                  placeholder="Enter the approximateAmount"
                   onChange={(e) => setApproximateAmount(e.target.value)}
                 />
               </p>
@@ -542,10 +542,10 @@ export default function Home() {
                 <input
                   value={status}
                   required
-                  type="number"
+                  type="text"
                   className="input"
                   id="namedash"
-                  placeholder="Enter the name"
+                  placeholder="Status"
                   onChange={(e) => setStatus(e.target.value)}
                 />
               </p>
