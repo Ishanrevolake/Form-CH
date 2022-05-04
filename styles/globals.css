@@ -1,0 +1,264 @@
+
+body {
+  font-family: 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica',
+    'Arial', sans-serif;
+ 
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+.container{
+  background-color: #82E0AA ;
+  border-radius: 10px;
+  padding-top: 20px;
+  padding:20px;
+  max-width: 600px;
+  margin: auto auto;
+  
+}
+
+.center{
+  margin: auto;
+}
+
+
+
+
+
+/* p     { display: table-row; border: none;  } */
+label {
+  display: inline-block;
+  width:200px;
+  text-align: left;
+  height: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: darkgreen;
+ 
+
+}
+input { display: table-cell;
+        height: 35px;
+        padding-left: 10px;
+        border-radius: 10px;
+        border-style: none;      
+        width: 250PX;
+}
+textarea { 
+ 
+  display: table-cell;
+        height: 35px;
+        padding-left: 10px;
+        padding-top: 5px;
+        border-radius: 10px;
+        border-style: none; 
+}
+
+.additem{
+  background-color: #2ECC71;
+  align-items: center;
+  border-color: none;
+  border-width: 2px;
+  border-radius: 10px;
+  padding: 50px;
+  padding-bottom: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+
+#topic{
+  color: white;
+}
+
+
+
+.addtButton{
+  margin-top: 15px;
+  width: 200px;
+  height: 30px;
+  color: white;
+  border-style: none;
+  background-color: darkgreen;
+  margin-top: 15px;
+  padding-left: 10px;
+  border-radius: 5px;
+  font-size: medium;
+  font-weight: bold;
+ 
+
+}
+
+
+#topicDiv{
+  padding: 1px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #2ECC71;
+  margin-bottom: 20px;
+  border-radius: 10px;
+
+
+}
+
+.items{
+  border: 2px;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: transparent;
+  padding: 25px;
+  margin-top: 20px;
+  background-color: #44cc5a;
+ 
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
+}
+
+
+  .itemMenu{
+    align-items: left;
+  }
+
+
+.removebutton{
+  margin-top: 15px;
+  width: 50px;
+  height: 25px;
+  color: white;
+  border-style: none;
+  background-color: red;
+  margin-top: 15px;
+}
+
+.removeButtondiv{
+  padding-bottom: 15px;
+}
+
+.submitButton{
+
+  margin-top: 15px;
+  width: 460px;
+  height: 40px;
+  color: white;
+  border-style: none;
+  background-color: #2ECC71;
+  margin-top: 15px;
+  padding-left: 10px;
+  border-radius: 5px;
+  font-size: medium;
+  font-weight: bold;
+}
+
+
+
+.textarea * {
+  vertical-align: middle;
+  width: 200px;
+}
+
+
+
+
+th, td, tbody,thead {
+ 
+ text-align: center;
+ border: none;
+}
+
+table {
+  
+  min-width: 500px;
+  border-radius: 15px;
+  padding-top: 15px;
+}
+
+td{
+  height: 40px;
+  min-width: 100px;
+}
+
+
+#tablediv{
+  border-radius: 15px;
+  background-color: #52eca7;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+
+
+.selection{
+  width: 250px;
+  height: 40px;
+  padding: 10px;
+  border-radius: 10px;
+  padding-right: 10px;
+}
+
+#attachmentlist{
+  border-radius: 15px;
+  background-color: #52eca7;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #82E0AA;
+  color: #fff;
+  height: 20px;
+  border-radius: 10px;
+ }
+ .nav-links a {
+  color: #fff;
+ }
+ /* LOGO */
+ .logo {
+  font-size: 32px;
+ }
+ /* NAVBAR MENU */
+ .menu {
+  display: flex;
+  gap: 1em;
+  font-size: 18px;
+ }
+ .menu li:hover {
+  background-color: #4c9e9e;
+  border-radius: 5px;
+  transition: 0.3s ease;
+ }
+ .menu li {
+  padding: 5px 14px;
+ }
+ /* DROPDOWN MENU */
+ .services {
+  position: relative; 
+ }
+ .dropdown {
+  background-color: rgb(1, 139, 139);
+  padding: 1em 0;
+  position: absolute; /*WITH RESPECT TO PARENT*/
+  display: none;
+  border-radius: 8px;
+  top: 35px;
+ }
+ .dropdown li + li {
+  margin-top: 10px;
+ }
+ .dropdown li {
+  padding: 0.5em 1em;
+  width: 8em;
+  text-align: center;
+ }
+ .dropdown li:hover {
+  background-color: #4c9e9e;
+ }
+ .services:hover .dropdown {
+  display: block;
+ }
+
+ ul{list-style-type:none;}
