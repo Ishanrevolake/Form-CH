@@ -10,12 +10,12 @@ export default function Home() {
 
 
   const [name, setName] = useState("");
+  const [hospitalName, setHospitalname] = useState("");
   const [description, setDescription] = useState("");
-  const [hospitalname, setHospitalname] = useState("");
-  const [number, setNumber] = useState("");
+  const [contactNumber, setNumber] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
-  const [otherinformation, setOtherinformation] = useState("");
+  const [otherInformation, setOtherinformation] = useState("");
   const [status, setStatus] = useState("");
   const [approximateAmount, setApproximateAmount] = useState("");
 
@@ -24,13 +24,7 @@ export default function Home() {
   const [itemType, setItemtype] = useState("");
   const [itemQuantity, setItemquantity] = useState("");
 
-  const [newiTem, setNewItem] = useState({
-    itemname: "",
-    itemDescription: "",
-    itemType: "",
-    itemQuantity: ""
-
-  });
+  const [responsse, setResponse] = useState("");
 
   const [attachments, setAttachment] = useState("");
   const [attachmentslist, setAttachmentslist] = useState([]);
@@ -38,49 +32,46 @@ export default function Home() {
 
   const [itemList, setItemList] = useState([]);
 
-
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(
-      name,
-      description,
-      hospitalname,
-      number,
-      email,
-      address,
-      otherinformation,
-      attachments,
-      status,
-      itemList,
-      approximateAmount);
-
-  }
-
   const submitBook = async (e) => {
+
     e.preventDefault();
     const response = await fetch('https://my9w6phodj.execute-api.us-east-1.amazonaws.com/dev/healthcare', {
       method: 'POST',
       body: JSON.stringify({
+
         name,
+        hospitalName,
         description,
-        hospitalName: hospitalname,
-        number,
+        contactNumber,
         email,
         address,
-        otherinformation,
+        items: itemList,
+        otherInformation,
         attachments: attachmentslist,
         status,
-        approximateAmount,
-        items: itemList
+        approximateAmount
+        
       }),
       headers: {
-        'Content-Type': 'application/json'
+      
+        
+      
       }
     })
     const data = await response.json()
+
     console.log(response);
-    console.log(data);
+    setResponse(responsse);
+    
+    console.log( ob );
+    console.log("data = ", data);
+
+    if(responsse != 200){
+      alert("Error");
+    }else{
+      alert("Submitted");
+    }
+
   };
 
   const addItems = async () => {
@@ -89,12 +80,11 @@ export default function Home() {
     previousItems.push(
 
       {
-        itemname: itemname,
-        itemDescription: itemDescription,
-        itemType: itemType,
-        itemQuantity: itemQuantity
-
-      }
+        name: itemname,
+        description: itemDescription,
+        type: itemType,
+        quantity: itemQuantity
+     }
 
 
     )
@@ -102,7 +92,7 @@ export default function Home() {
     console.log(" prevoisu Items", previousItems);
     setItemList(previousItems);
     console.log(" iTEM Items", itemList);
-
+    setItemquantity(0);
 
   }
 
@@ -116,11 +106,24 @@ export default function Home() {
     console.log(attachmentslist);
 
 
-
+    setAttachment("");
 
 
   }
 
+  const ob = {
+    name,
+    description,
+    hospitalName,
+    contactNumber,
+    email,
+    address,
+    otherInformation,
+    attachments: attachmentslist,
+    status,
+    approximateAmount,
+    items: itemList
+  }
 
   return (
 
@@ -137,7 +140,6 @@ export default function Home() {
           <div className="menu">
             <li>Home</li>
             <li>About</li>
-            <li>Location</li>
             <li>Contact</li>
           </div>
         </ul>
@@ -155,9 +157,9 @@ export default function Home() {
 
             <div className="col-lg-6">
 
-              <p>
+             
                 <label
-                  htmlFor="namedash"
+                
                   className="label"
 
                 >
@@ -165,43 +167,42 @@ export default function Home() {
                 </label>
                 <input
                   value={name}
-                  required
-                  type="text"
+               
                   className="input"
-                  id="namedash"
+                
 
                   placeholder="Enter the name"
                   onChange={(e) => setName(e.target.value)}
                 />
-              </p>
+             
 
 
             </div>
             <div className="col-lg-6">
 
-              <p>
+            
                 <label
-                  htmlFor="namedash"
+                 
                   className="label"
                 >
                   Hospital name
                 </label>
                 <input
-                  required
-                  value={hospitalname}
-                  type="text"
+                
+                  value={hospitalName}
+                 
                   className="input"
-                  id="namedash"
+                  
                   placeholder="Enter hospital name"
                   onChange={(e) => setHospitalname(e.target.value)}
                 />
-              </p>
+            
 
             </div>
 
             <div className="col-lg-6">
 
-              <p>
+              
                 <label
                   htmlFor="namedash"
                   className="label"
@@ -209,7 +210,7 @@ export default function Home() {
                   Contact Number
                 </label>
                 <input
-                  value={number}
+                  value={contactNumber}
                   required
                   type="text"
                   className="input"
@@ -217,13 +218,13 @@ export default function Home() {
                   placeholder="Enter Phone number"
                   onChange={(e) => setNumber(e.target.value)}
                 />
-              </p>
+             
 
             </div>
 
             <div className="col-lg-6">
 
-              <p>
+           
                 <label
                   htmlFor="namedash"
                   className="label"
@@ -239,13 +240,13 @@ export default function Home() {
                   placeholder="Enter Email "
                   onChange={(e) => setEmail(e.target.value)}
                 />
-              </p>
+             
 
             </div>
 
             <div className="col-lg-6">
 
-              <p>
+             
                 <label
                   htmlFor="namedash"
                   className="label"
@@ -261,7 +262,7 @@ export default function Home() {
                   placeholder="Enter Address "
                   onChange={(e) => setAddress(e.target.value)}
                 />
-              </p>
+              
 
             </div>
 
@@ -280,7 +281,7 @@ export default function Home() {
                 <textarea
                   value={description}
                   type="textarea"
-                 
+
 
                   name="textarea"
                   id="aboutTextarea"
@@ -307,8 +308,9 @@ export default function Home() {
             <div className="additem">
               <div className='itemMenu' >
 
+
                 <label
-                  htmlFor="namedash"
+               
                   className="itemLabel"
                 >
                   Name
@@ -333,7 +335,7 @@ export default function Home() {
                 <textarea
                   value={itemDescription}
                   type="textarea"
-               
+
                   onChange={(e) => setItemdecrriptio(e.target.value)}
                   name="textarea"
                   id="aboutTextarea"
@@ -348,11 +350,11 @@ export default function Home() {
                 </label>
                 <select onChange={(e) => setItemtype(e.target.value)} value={itemType} className="selection" >
 
-                  <option value="medicine" >
-                    medicene
+                  <option value="Medicine" >
+                    Medicene
                   </option>
-                  <option value="paper" >
-                    Paper
+                  <option value="Other" >
+                   Other
                   </option>
                   <option value="Oxygen" >
                     Oxygen
@@ -369,7 +371,6 @@ export default function Home() {
                 <input
                   onChange={(e) => setItemquantity(e.target.value)}
                   type="number"
-                  maxLength="10"
                   value={itemQuantity}
                   name="textarea"
                   id="aboutTextarea"
@@ -381,7 +382,7 @@ export default function Home() {
                   <br></br>
                   <button
                     onClick={addItems}
-                    type="reset"
+                    type="button"
                     className="addtButton"
 
                   >
@@ -397,7 +398,7 @@ export default function Home() {
 
 
 
-                <table>
+                <table id="table" >
                   <thead>
                     <tr>
                       <th>Item</th>
@@ -409,21 +410,15 @@ export default function Home() {
                   <tbody>
 
 
-                    {itemList.map((a) => <tr key={a.itemname} >
+                    {itemList.map((a) => <tr key={a.name} >
 
-                      <td> {a.itemname}   </td>
-                      <td> {a.itemDescription}   </td>
-
-                      <td> {a.itemType}   </td>
-                      <td> {a.itemQuantity}   </td>
+                      <td> {a.name}   </td>
+                      <td> {a.description}   </td>
+                      <td> {a.type}   </td>
+                      <td> {a.quantity}   </td>
 
                     </tr>)}
-
-
-
-
-
-                  </tbody>
+                    </tbody>
                 </table>
 
 
@@ -449,7 +444,7 @@ export default function Home() {
                   Other Information
                 </label>
                 <input
-                  value={otherinformation}
+                  value={otherInformation}
                   required
                   type="text"
                   className="input"
@@ -485,25 +480,25 @@ export default function Home() {
             </div>
             <div className="col-lg-6">
 
-             
-                <label
-                  htmlFor="namedash"
-                  className="label"
 
-                >
-                  attachments
-                </label>
-                <input
-                  value={attachments}
+              <label
+                htmlFor="namedash"
+                className="label"
 
-                  type="text"
-                  className="input"
-                  id="namedash"
-                  placeholder="Enter the URLs"
-                  onChange={(e) => setAttachment(e.target.value)}
+              >
+                attachments
+              </label>
+              <input
+                value={attachments}
 
-                />
-              
+                type="text"
+                className="input"
+                id="namedash"
+                placeholder="Enter the URLs"
+                onChange={(e) => setAttachment(e.target.value)}
+
+              />
+
               <center>
 
                 <button
@@ -520,7 +515,7 @@ export default function Home() {
                 <div id="attachmentlist">
                   {attachmentslist.map((a) => <div key={a} >
 
-                      <ul>{a}</ul>
+                    <ul>{a}</ul>
 
                   </div>)}
                 </div>
