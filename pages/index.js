@@ -5,6 +5,7 @@ import { useForm, ValidationError } from "@formspree/react";
 import { Form, Input, Button, Checkbox } from 'antd';
 import { useState } from 'react'
 import { useRouter } from 'next/router'
+import axios from 'axios';
 
 export default function Home() {
 
@@ -34,43 +35,43 @@ export default function Home() {
 
   const submitBook = async (e) => {
 
-    e.preventDefault();
-    const response = await fetch('https://my9w6phodj.execute-api.us-east-1.amazonaws.com/dev/healthcare', {
-      method: 'POST',
-      body: JSON.stringify({
 
-        name,
-        hospitalName,
-        description,
-        contactNumber,
-        email,
-        address,
-        items: itemList,
-        otherInformation,
-        attachments: attachmentslist,
-        status,
-        approximateAmount
-        
-      }),
-      headers: {
-      
-        
-      
-      }
-    })
-    const data = await response.json()
+
+    e.preventDefault();
+    const inputs = {
+      "name": name,
+      "description": description,
+      "hospitalName": hospitalName,
+      "contactNumber": contactNumber,
+      "email": email,
+      "address": address,
+      "items":itemList,
+      "otherInformation": otherInformation,
+      "attachments":attachmentslist,
+      "approximateAmount": approximateAmount,
+      "status": status
+  }
+    const response = await axios.post('https://my9w6phodj.execute-api.us-east-1.amazonaws.com/dev/healthcare',
+    inputs)
+    
 
     console.log(response);
     setResponse(responsse);
     
-    console.log( ob );
-    console.log("data = ", data);
-
-    if(responsse != 200){
+    if(responsse =! 200 ){
       alert("Error");
     }else{
       alert("Submitted");
     }
+
+    console.log( ob );
+   
+
+    // if(responsse != 200){
+    //   alert("Error");
+    // }else{
+    //   alert("Submitted");
+    // }
 
   };
 
@@ -374,7 +375,7 @@ export default function Home() {
                   value={itemQuantity}
                   name="textarea"
                   id="aboutTextarea"
-                  placeholder="Type Description here"
+                  placeholder="Add quantitiy here"
                 ></input>
 
 
