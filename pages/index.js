@@ -64,7 +64,7 @@ export default function Home() {
       alert("Submitted");
     }
 
-    console.log( ob );
+    console.log(inputs);
    
 
     // if(responsse != 200){
@@ -155,14 +155,14 @@ export default function Home() {
 
         <div >
           <form onSubmit={submitBook}  >
-
-            <div className="col-lg-6">
+            
+            <div className="name">
 
              
                 <label
                 
                   className="label"
-
+      
                 >
                   Name
                 </label>
@@ -179,7 +179,7 @@ export default function Home() {
 
 
             </div>
-            <div className="col-lg-6">
+            <div className="name">
 
             
                 <label
@@ -201,7 +201,7 @@ export default function Home() {
 
             </div>
 
-            <div className="col-lg-6">
+            <div id="contactnum" className="col-lg-6">
 
               
                 <label
@@ -296,11 +296,11 @@ export default function Home() {
             </br>
             <center>
 
-              <div id="topicDiv">
+              {/* <div id="topicDiv">
 
                 <h2 id="topic" >Add Needs</h2>
 
-              </div>
+              </div> */}
 
 
             </center>
@@ -326,8 +326,9 @@ export default function Home() {
                   onChange={(e) => setItemname(e.target.value)}
                 />
 
-
-                <label
+                  <br></br>
+              
+                <label  
                   htmlFor="namedash"
                   className="itemLabel"
                 >
@@ -339,13 +340,15 @@ export default function Home() {
 
                   onChange={(e) => setItemdecrriptio(e.target.value)}
                   name="textarea"
-                  id="aboutTextarea"
+                  id="aboutTextarea2"
                   placeholder="Type Description here"
                 ></textarea>
 
+                <div id="type" >
+
                 <label
                   htmlFor="namedash"
-                  className="itemLabel"
+                  className="itemtype"
                 >
                   Type
                 </label>
@@ -363,6 +366,12 @@ export default function Home() {
 
                 </select>
 
+
+
+                </div>
+
+                <br></br>
+
                 <label
                   htmlFor="namedash"
                   className="itemLabel"
@@ -374,7 +383,7 @@ export default function Home() {
                   type="number"
                   value={itemQuantity}
                   name="textarea"
-                  id="aboutTextarea"
+                 
                   placeholder="Add quantitiy here"
                 ></input>
 
@@ -464,7 +473,7 @@ export default function Home() {
                   htmlFor="namedash"
                   className="label"
                 >
-                  approximateAmount
+                  approximate Amount
                 </label>
                 <input
                   value={approximateAmount}
