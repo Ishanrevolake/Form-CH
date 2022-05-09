@@ -249,8 +249,14 @@ form{
 @media only screen and (max-width: 600px) {
 
 
+.additem{
+  max-width: 90vw;
+  padding: 7vw;
+  align-items: center;
+}  
+
 .container{
-  width: 350px;
+  width: 85vw;
 }
 
 
