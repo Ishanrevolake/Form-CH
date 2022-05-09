@@ -352,6 +352,9 @@ export default function Home() {
                   placeholder="Type Description here"
                 ></textarea>
 
+                
+                <br></br>
+
                 <div id="type" >
 
                 <label
@@ -360,7 +363,7 @@ export default function Home() {
                 >
                   Type
                 </label>
-                <select onChange={(e) => setItemtype(e.target.value)} value={itemType} className="selection" >
+                <select onChange={(e) => setItemtype(e.target.value)} value={itemType} id="selection" className="selection" >
 
                   <option value="Medicine" >
                     Medicene
@@ -378,6 +381,7 @@ export default function Home() {
 
                 </div>
 
+                <br></br>
                 <br></br>
 
                 <label

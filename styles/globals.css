@@ -245,6 +245,12 @@ form{
 }
 
 
+#navtopic{
+ 
+  font-size: 40px;
+  font-weight: bold;
+}
+
 
 @media only screen and (max-width: 600px) {
 
@@ -300,21 +306,22 @@ form{
   }
 
   input{
-    max-width: 260px;
+    width: 50vw;
     padding-left: 20px;
     height: 30px;
-    width: 280px;
+  
   }
 
 
   #aboutTextarea{
   
-    width:270px;
+    width:50vw;
     
   }
   #aboutTextarea2{
   
-    width:75vw;
+    width:70vw;
+    padding-left: 10px;
     
   }
 
@@ -386,7 +393,10 @@ form{
      font-size: small;
   }
 
-
+  #selection {
+    width: 70vw;
+  
+  }
 
 }
 
@@ -428,9 +438,6 @@ form{
 }
 
 /* LOGO */
-.logo {
-  font-size: 32px;
-}
 
 /* NAVBAR MENU */
 .menu {
