@@ -132,7 +132,7 @@ export default function Home() {
 
       <nav className="navbar">
 
-        <div className="logo">Medical</div>
+        <div className="logo">Logo</div>
 
         <ul className="nav-links">
 
