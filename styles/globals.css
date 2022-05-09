@@ -89,7 +89,7 @@ input {
   padding-left: 10px;
   border-radius: 5px;
   border-style: none;
-  width: 300PX;
+  width: 80vw;
   border: 2px solid rgb(195, 195, 195);
 }
 
@@ -249,14 +249,18 @@ form{
 @media only screen and (max-width: 600px) {
 
 
+  .navbar {
+   width: 80vw;
+  }  
+
 .additem{
   max-width: 80vw;
-  padding: 7vw;
+  padding: 1vw;
   align-items: center;
 }  
 
 .container{
-  width: 85vw;
+  width: 80vw;
 }
 
 
@@ -296,7 +300,7 @@ form{
   }
 
   input{
-    max-width: 260px;
+    width: 80vw;
     padding-left: 20px;
     height: 30px;
     width: 280px;
@@ -305,12 +309,11 @@ form{
 
   #aboutTextarea{
   
-    width:270px;
+    width:80vw;
     
   }
   #aboutTextarea2{
-  
-    width:310px;
+    width:77vw;
     
   }
 
@@ -365,12 +368,22 @@ form{
   }
 
   .logo {
-    font-size: smaller;
+    font-size: 20px;
     font-style: italic;
   }
 
+  #navtopic{
+    font-size: medium;
+    font-weight: bolder;
+  }
 
+  th{
+    font-size: small;
+  }
 
+  td{
+    font-size: small;
+  }
 
 
 
@@ -384,7 +397,7 @@ form{
 
 
 .selection {
-  width: 300px;
+  width: 80vw;
   height: 40px;
   padding: 10px;
   border-radius: 5px;
