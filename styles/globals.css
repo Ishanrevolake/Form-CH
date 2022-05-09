@@ -89,7 +89,7 @@ input {
   padding-left: 10px;
   border-radius: 5px;
   border-style: none;
-  width: 80vw;
+  width: 300px;
   border: 2px solid rgb(195, 195, 195);
 }
 
@@ -300,7 +300,7 @@ form{
   }
 
   input{
-    width: 80vw;
+    max-width: 260px;
     padding-left: 20px;
     height: 30px;
     width: 280px;
@@ -309,11 +309,12 @@ form{
 
   #aboutTextarea{
   
-    width:80vw;
+    width:270px;
     
   }
   #aboutTextarea2{
-    width:77vw;
+  
+    width:75vw;
     
   }
 
@@ -382,7 +383,7 @@ form{
   }
 
   td{
-    font-size: small;
+     font-size: small;
   }
 
 
@@ -397,7 +398,7 @@ form{
 
 
 .selection {
-  width: 80vw;
+  width: 300px;
   height: 40px;
   padding: 10px;
   border-radius: 5px;
